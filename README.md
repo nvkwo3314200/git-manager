@@ -46,8 +46,13 @@
 ```
 (release)$: git merge dev --no-ff             # 把dev分支合并到release，然后在测试环境拉取并测试
 ```
-4.生产环境上线
+4. 测试
+```
+(testing)$: git merge release --no-ff          # 测试环境拉取并测试
+```
+5.生产环境上线
 ```
 (master)$: git merge testing --no-ff          # 把testing测试好的代码合并到master，运维人员操作
-(master)$: git tag -a v0.1 -m '部署包版本名'  #给版本命名，打Tag
+(master)$: git tag -a v0.1 -m '部署包版本名'   # 给版本命名，打Tag
+(master)$: git push origin v0.1               # 把打好的包推到远程服务器上
 ```
